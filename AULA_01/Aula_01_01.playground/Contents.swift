@@ -1,14 +1,27 @@
 import UIKit
 
-print(name)
+/*
+ Tipos de Variaveis
+ 
+ Int = 10
+ Double = 3.5
+ Float = 3.5
+ String = "Luis"
+ Bool = true ou false
+ */
 
+//var -> mutable
 var name: String = "Luis"
-var lastName: String = "Gustavo"
-var greeting = "Hello, playground"
+name = "Luis Gustavo"
+var lastName: String = "Kokumai"
+var isValid: Bool = true
 
-print("\(name) \(lastName)")
+//let -> not mutable
+let age: Int = 20
 
+print("Meu nome é \(name) \(lastName) e tenho \(age) anos!")
 
-var tuple: (String, Int) = ("Luis", 10)
+//Tipos Complexos
 
-print(tuple)
+var button: UIButton = UIButton()
+var label = UILabel()
