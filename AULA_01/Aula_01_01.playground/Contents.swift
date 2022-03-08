@@ -11,6 +11,4 @@ print("\(name) \(lastName)")
 
 var tuple: (String, Int) = ("Luis", 10)
 
-tuple.0 = ("Luisa")
-
 print(tuple)
