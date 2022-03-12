@@ -17,6 +17,14 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        delegates()
+        
+    }
+    
+    private func delegates() {
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     // Master credentials
@@ -115,4 +123,19 @@ extension String {
         
         return emailPred.evaluate(with: email)
     }
+}
+
+extension HomeController: UITextFieldDelegate {
+    
+    // Chamado quando o usuário clica no botão return
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
 }
