@@ -15,11 +15,11 @@
 		A8828B7227E29E1D0081C486 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8828B7027E29E1D0081C486 /* LaunchScreen.storyboard */; };
 		A8828B7C27E2A2030081C486 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8828B7A27E2A2030081C486 /* CustomTableViewCell.swift */; };
 		A8828B7D27E2A2030081C486 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8828B7B27E2A2030081C486 /* CustomTableViewCell.xib */; };
-		A8828B8027E2A81C0081C486 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8828B7F27E2A81C0081C486 /* DataSource.swift */; };
+		A8828B8027E2A81C0081C486 /* Musics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8828B7F27E2A81C0081C486 /* Musics.swift */; };
 		A8828B8227E2AC830081C486 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8828B8127E2AC830081C486 /* SecondViewController.swift */; };
 		A8828B8527E2AD8C0081C486 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8828B8327E2AD8C0081C486 /* CustomCollectionViewCell.swift */; };
 		A8828B8627E2AD8C0081C486 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8828B8427E2AD8C0081C486 /* CustomCollectionViewCell.xib */; };
-		A8828B8827E2B6390081C486 /* Albuns.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8828B8727E2B6390081C486 /* Albuns.swift */; };
+		A8828B8827E2B6390081C486 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8828B8727E2B6390081C486 /* Categories.swift */; };
 		A8828B8A27E2BC380081C486 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8828B8927E2BC380081C486 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,11 +34,11 @@
 		A8828B7327E29E1D0081C486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8828B7A27E2A2030081C486 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		A8828B7B27E2A2030081C486 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
-		A8828B7F27E2A81C0081C486 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		A8828B7F27E2A81C0081C486 /* Musics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musics.swift; sourceTree = "<group>"; };
 		A8828B8127E2AC830081C486 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		A8828B8327E2AD8C0081C486 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		A8828B8427E2AD8C0081C486 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
-		A8828B8727E2B6390081C486 /* Albuns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albuns.swift; sourceTree = "<group>"; };
+		A8828B8727E2B6390081C486 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		A8828B8927E2BC380081C486 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,8 +101,8 @@
 		A8828B7E27E2A8030081C486 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A8828B7F27E2A81C0081C486 /* DataSource.swift */,
-				A8828B8727E2B6390081C486 /* Albuns.swift */,
+				A8828B7F27E2A81C0081C486 /* Musics.swift */,
+				A8828B8727E2B6390081C486 /* Categories.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,9 +185,9 @@
 				A8828B8527E2AD8C0081C486 /* CustomCollectionViewCell.swift in Sources */,
 				A8828B6A27E29E1B0081C486 /* ViewController.swift in Sources */,
 				A8828B6627E29E1B0081C486 /* AppDelegate.swift in Sources */,
-				A8828B8827E2B6390081C486 /* Albuns.swift in Sources */,
+				A8828B8827E2B6390081C486 /* Categories.swift in Sources */,
 				A8828B7C27E2A2030081C486 /* CustomTableViewCell.swift in Sources */,
-				A8828B8027E2A81C0081C486 /* DataSource.swift in Sources */,
+				A8828B8027E2A81C0081C486 /* Musics.swift in Sources */,
 				A8828B6827E29E1B0081C486 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +340,7 @@
 				DEVELOPMENT_TEAM = B64C2UKR77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DesafioAula08_01/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Your Music";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -370,6 +371,7 @@
 				DEVELOPMENT_TEAM = B64C2UKR77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DesafioAula08_01/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Your Music";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

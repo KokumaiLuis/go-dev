@@ -11,14 +11,15 @@ import UIKit
 class SecondViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var labelTitle: UILabel!
     
-    var albuns: [Albuns] = []
+    var categories: [Categories] = []
     
     override func viewDidLoad() {
         delegates()
         initTitle()
         registerCell()
-        initAlbuns()
+        initCategories()
         collectionLayout()
     }
     
@@ -32,25 +33,33 @@ class SecondViewController: UIViewController {
         collectionView.register(nib, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
     }
     
-    private func initAlbuns(){
-        albuns.append(Albuns(image: "system_album", title: "Toxicity"))
+    private func initCategories(){
+        categories.append(Categories(image: "rock_image", title: "Rock"))
         
-        albuns.append(Albuns(image: "acdc_album", title: "Highway to Hell"))
+        categories.append(Categories(image: "pop_image", title: "Pop"))
         
-        albuns.append(Albuns(image: "avenged_album", title: "Nightmare"))
+        categories.append(Categories(image: "jazz_image", title: "Jazz"))
         
-        albuns.append(Albuns(image: "redhot_album", title: "Californication"))
+        categories.append(Categories(image: "gospel_image", title: "Gospel"))
+        
+        categories.append(Categories(image: "eletronic_image", title: "Eletrônica"))
+        
+        categories.append(Categories(image: "mpb_image", title: "MPB"))
+        
+        categories.append(Categories(image: "sertanejo_image", title: "Sertanejo"))
+        
+        categories.append(Categories(image: "pagode_image", title: "Pagode"))
     }
     
     private func collectionLayout() {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: view.frame.size.width / 2.2, height: 200)
-        layout.minimumLineSpacing = 0
+        layout.itemSize = CGSize(width: view.frame.size.width / 2.2, height: 160)
+        layout.minimumLineSpacing = 15
         collectionView.collectionViewLayout = layout
     }
     
     private func initTitle() {
-        title = "Categorias"
+        labelTitle.text = "Categorias"
     }
     
     
@@ -63,15 +72,15 @@ extension SecondViewController: UICollectionViewDelegate {
 
 extension SecondViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return albuns.count
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as? CustomCollectionViewCell else { return UICollectionViewCell()}
         
-        let album = albuns[indexPath.row]
+        let category = categories[indexPath.row]
         
-        cell.setupCollectionView(image: album.image, title: album.title)
+        cell.setupCollectionView(image: category.image, title: category.title)
         
         return cell
     }

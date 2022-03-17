@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "white_stripes_album.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

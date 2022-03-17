@@ -10,8 +10,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var labelTitle: UILabel!
     
-    var musics: [DataSource] = []
+    var musics: [Musics] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,28 +35,28 @@ class ViewController: UIViewController {
     }
     
     private func initMusics() {
-        musics.append(DataSource(image: "system_album", title: "Toxicity", singer: "System of a Down"))
+        musics.append(Musics(image: "system_album", title: "Toxicity", singer: "System of a Down"))
         
-        musics.append(DataSource(image: "avenged_album", title: "Nightmare", singer: "Avenged Sevenfold"))
+        musics.append(Musics(image: "metallica_album", title: "Nothing Else Matters", singer: "Metallica"))
         
+        musics.append(Musics(image: "avenged_album", title: "Nightmare", singer: "Avenged Sevenfold"))
         
-        musics.append(DataSource(image: "system_album", title: "Prison Song", singer: "System of a Down"))
+        musics.append(Musics(image: "guns_album", title: "Patience", singer: "Guns and Roses"))
         
-        musics.append(DataSource(image: "acdc_album", title: "Highway to Hell", singer: "AC/DC"))
+        musics.append(Musics(image: "acdc_album", title: "Highway to Hell", singer: "AC/DC"))
         
-        musics.append(DataSource(image: "system_album", title: "Chop Suey!", singer: "System of a Down"))
+        musics.append(Musics(image: "redhot_album", title: "Californication", singer: "Red Hot Chili Peppers"))
         
-        musics.append(DataSource(image: "acdc_album", title: "Walk All Over You", singer: "AC/DC"))
+        musics.append(Musics(image: "white_stripes_album", title: "Seven Nation Army", singer: "The White Stripes"))
         
-        musics.append(DataSource(image: "acdc_album", title: "Get It Hot", singer: "AC/DC"))
+        musics.append(Musics(image: "cramberries_album", title: "Zombie", singer: "The Cramberries"))
         
-        musics.append(DataSource(image: "avenged_album", title: "Danger Line", singer: "Avenged Sevenfold"))
-        
-        musics.append(DataSource(image: "avenged_album", title: "So Far Away", singer: "Avenged Sevenfold"))
+        musics.append(Musics(image: "pearl_album", title: "Black", singer: "Pearl Jam"))
+         
     }
     
     private func initTitle() {
-        title = "Home"
+        labelTitle.text = "Suas Músicas"
     }
 
 
