@@ -53,6 +53,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A86F6A3C27E3E36600205B40 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A8828B6927E29E1B0081C486 /* ViewController.swift */,
+				A8828B8127E2AC830081C486 /* SecondViewController.swift */,
+				A8828B8927E2BC380081C486 /* ThirdViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A86F6A3D27E3ECC300205B40 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A8828B8327E2AD8C0081C486 /* CustomCollectionViewCell.swift */,
+				A8828B8427E2AD8C0081C486 /* CustomCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		A8828B5927E29E1B0081C486 = {
 			isa = PBXGroup;
 			children = (
@@ -72,35 +91,32 @@
 		A8828B6427E29E1B0081C486 /* DesafioAula08_01 */ = {
 			isa = PBXGroup;
 			children = (
+				A8828B7927E2A1E00081C486 /* TableViewCells */,
+				A86F6A3D27E3ECC300205B40 /* CollectionViewCell */,
+				A86F6A3C27E3E36600205B40 /* ViewControllers */,
 				A8828B7E27E2A8030081C486 /* Models */,
-				A8828B7927E2A1E00081C486 /* Cells */,
-				A8828B6527E29E1B0081C486 /* AppDelegate.swift */,
-				A8828B6727E29E1B0081C486 /* SceneDelegate.swift */,
-				A8828B6927E29E1B0081C486 /* ViewController.swift */,
 				A8828B6B27E29E1B0081C486 /* Main.storyboard */,
 				A8828B6E27E29E1D0081C486 /* Assets.xcassets */,
 				A8828B7027E29E1D0081C486 /* LaunchScreen.storyboard */,
 				A8828B7327E29E1D0081C486 /* Info.plist */,
-				A8828B8127E2AC830081C486 /* SecondViewController.swift */,
-				A8828B8927E2BC380081C486 /* ThirdViewController.swift */,
 			);
 			path = DesafioAula08_01;
 			sourceTree = "<group>";
 		};
-		A8828B7927E2A1E00081C486 /* Cells */ = {
+		A8828B7927E2A1E00081C486 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
 				A8828B7A27E2A2030081C486 /* CustomTableViewCell.swift */,
 				A8828B7B27E2A2030081C486 /* CustomTableViewCell.xib */,
-				A8828B8327E2AD8C0081C486 /* CustomCollectionViewCell.swift */,
-				A8828B8427E2AD8C0081C486 /* CustomCollectionViewCell.xib */,
 			);
-			path = Cells;
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		A8828B7E27E2A8030081C486 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A8828B6527E29E1B0081C486 /* AppDelegate.swift */,
+				A8828B6727E29E1B0081C486 /* SceneDelegate.swift */,
 				A8828B7F27E2A81C0081C486 /* Musics.swift */,
 				A8828B8727E2B6390081C486 /* Categories.swift */,
 			);
@@ -340,7 +356,7 @@
 				DEVELOPMENT_TEAM = B64C2UKR77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DesafioAula08_01/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Your Music";
+				INFOPLIST_KEY_CFBundleDisplayName = "Your Music!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -352,7 +368,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.luisKokumai.DesafioAula08-01";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -371,7 +387,7 @@
 				DEVELOPMENT_TEAM = B64C2UKR77;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DesafioAula08_01/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Your Music";
+				INFOPLIST_KEY_CFBundleDisplayName = "Your Music!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -383,7 +399,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.luisKokumai.DesafioAula08-01";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

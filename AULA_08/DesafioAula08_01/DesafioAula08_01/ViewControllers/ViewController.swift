@@ -37,6 +37,8 @@ class ViewController: UIViewController {
     private func initMusics() {
         musics.append(Musics(image: "system_album", title: "Toxicity", singer: "System of a Down"))
         
+        musics.append(Musics(image: "foofighters_album", title: "Best of You", singer: "Foo Fighters"))
+        
         musics.append(Musics(image: "metallica_album", title: "Nothing Else Matters", singer: "Metallica"))
         
         musics.append(Musics(image: "avenged_album", title: "Nightmare", singer: "Avenged Sevenfold"))
