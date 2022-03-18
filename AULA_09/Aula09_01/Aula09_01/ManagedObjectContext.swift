@@ -38,9 +38,10 @@ class ManagedObjectContext: managedReadProtocol, managedSaveProtocol, managedDel
     func getPersons() -> [Person] {
         var listPerson: [Person] = []
         
-        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
-        
         do {
+            
+            let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: entity)
+            
             guard let persons = try getContext().fetch(fetchRequest) as? [NSManagedObject] else { return listPerson}
             
             for item in persons {
