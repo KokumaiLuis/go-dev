@@ -66,6 +66,7 @@
 		A884BB3027E929B100B7D6D2 /* DesafioAula11_01 */ = {
 			isa = PBXGroup;
 			children = (
+				A884BB5327E9472F00B7D6D2 /* Network */,
 				A884BB4A27E92D9A00B7D6D2 /* Model */,
 				A884BB4527E92B2700B7D6D2 /* Cell */,
 				A884BB3127E929B100B7D6D2 /* AppDelegate.swift */,
@@ -76,7 +77,6 @@
 				A884BB3C27E929B300B7D6D2 /* LaunchScreen.storyboard */,
 				A884BB3F27E929B300B7D6D2 /* Info.plist */,
 				A884BB4D27E92EC000B7D6D2 /* UiImage+Extension.swift */,
-				A884BB5127E934F500B7D6D2 /* APIService.swift */,
 			);
 			path = DesafioAula11_01;
 			sourceTree = "<group>";
@@ -96,6 +96,14 @@
 				A884BB4B27E92DA500B7D6D2 /* Person.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A884BB5327E9472F00B7D6D2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A884BB5127E934F500B7D6D2 /* APIService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
