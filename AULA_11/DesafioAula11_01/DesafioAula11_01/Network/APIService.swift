@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 enum PersonError: Error {
     case invalidUrl
@@ -38,6 +39,14 @@ class APIService: ServiceProtocol {
         
         guard let url = URL(string: url) else { return completion(.failure(.invalidUrl)) }
         
+        AF.request(url, method: .get).validate().responseDecodable(of: [Person].self) { response in
+            guard let users = response.value else { return }
+            
+            completion(.success(users))
+        }
+        
+        /*
+        
         let dataTask = session.dataTask(with: url) { data, _, _ in
             
             do {
@@ -57,6 +66,7 @@ class APIService: ServiceProtocol {
         }
         
         dataTask.resume()
+         */
         
     }
     

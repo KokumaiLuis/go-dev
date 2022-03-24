@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CustomTableViewCell: UITableViewCell {
     
@@ -24,7 +25,11 @@ class CustomTableViewCell: UITableViewCell {
     func setup(name: String, company: String, photo: String) {
         labelName.text = name
         labelCompany.text = company
-        imagePerson.loadImage(from: photo)
+        //imagePerson.loadImage(from: photo)
+        
+        let url = URL(string: photo)
+        
+        imagePerson.kf.setImage(with: url)
     }
     
 }

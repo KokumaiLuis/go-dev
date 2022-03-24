@@ -16,11 +16,15 @@
 		A884BB4827E92B4500B7D6D2 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A884BB4627E92B4500B7D6D2 /* CustomTableViewCell.swift */; };
 		A884BB4927E92B4500B7D6D2 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A884BB4727E92B4500B7D6D2 /* CustomTableViewCell.xib */; };
 		A884BB4C27E92DA500B7D6D2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A884BB4B27E92DA500B7D6D2 /* Person.swift */; };
-		A884BB4E27E92EC000B7D6D2 /* UiImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A884BB4D27E92EC000B7D6D2 /* UiImage+Extension.swift */; };
+		A884BB4E27E92EC000B7D6D2 /* NaoUtilizado - UiImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A884BB4D27E92EC000B7D6D2 /* NaoUtilizado - UiImage+Extension.swift */; };
 		A884BB5227E934F500B7D6D2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A884BB5127E934F500B7D6D2 /* APIService.swift */; };
+		FDD632FB5AC789645D97B707 /* libPods-DesafioAula11_01.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF0AED076335A5B2CFEF0C5 /* libPods-DesafioAula11_01.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		071C9CAA08204C75D05D25AF /* Pods-DesafioAula11_01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioAula11_01.debug.xcconfig"; path = "Target Support Files/Pods-DesafioAula11_01/Pods-DesafioAula11_01.debug.xcconfig"; sourceTree = "<group>"; };
+		1FF0AED076335A5B2CFEF0C5 /* libPods-DesafioAula11_01.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DesafioAula11_01.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95D1E492FB29E33599D054DB /* Pods-DesafioAula11_01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioAula11_01.release.xcconfig"; path = "Target Support Files/Pods-DesafioAula11_01/Pods-DesafioAula11_01.release.xcconfig"; sourceTree = "<group>"; };
 		A884BB2E27E929B100B7D6D2 /* DesafioAula11_01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioAula11_01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A884BB3127E929B100B7D6D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A884BB3327E929B100B7D6D2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,7 +36,7 @@
 		A884BB4627E92B4500B7D6D2 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		A884BB4727E92B4500B7D6D2 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		A884BB4B27E92DA500B7D6D2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		A884BB4D27E92EC000B7D6D2 /* UiImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiImage+Extension.swift"; sourceTree = "<group>"; };
+		A884BB4D27E92EC000B7D6D2 /* NaoUtilizado - UiImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NaoUtilizado - UiImage+Extension.swift"; sourceTree = "<group>"; };
 		A884BB5127E934F500B7D6D2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD632FB5AC789645D97B707 /* libPods-DesafioAula11_01.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +57,8 @@
 			children = (
 				A884BB3027E929B100B7D6D2 /* DesafioAula11_01 */,
 				A884BB2F27E929B100B7D6D2 /* Products */,
+				C903A14354E55A2B2824902F /* Pods */,
+				CE85D9EFA0F7CC474BA61AB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,7 +83,7 @@
 				A884BB3A27E929B300B7D6D2 /* Assets.xcassets */,
 				A884BB3C27E929B300B7D6D2 /* LaunchScreen.storyboard */,
 				A884BB3F27E929B300B7D6D2 /* Info.plist */,
-				A884BB4D27E92EC000B7D6D2 /* UiImage+Extension.swift */,
+				A884BB4D27E92EC000B7D6D2 /* NaoUtilizado - UiImage+Extension.swift */,
 			);
 			path = DesafioAula11_01;
 			sourceTree = "<group>";
@@ -106,6 +113,23 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		C903A14354E55A2B2824902F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				071C9CAA08204C75D05D25AF /* Pods-DesafioAula11_01.debug.xcconfig */,
+				95D1E492FB29E33599D054DB /* Pods-DesafioAula11_01.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE85D9EFA0F7CC474BA61AB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FF0AED076335A5B2CFEF0C5 /* libPods-DesafioAula11_01.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,6 +137,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A884BB4227E929B300B7D6D2 /* Build configuration list for PBXNativeTarget "DesafioAula11_01" */;
 			buildPhases = (
+				75B46597C314C174BB01DAA1 /* [CP] Check Pods Manifest.lock */,
 				A884BB2A27E929B100B7D6D2 /* Sources */,
 				A884BB2B27E929B100B7D6D2 /* Frameworks */,
 				A884BB2C27E929B100B7D6D2 /* Resources */,
@@ -173,6 +198,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		75B46597C314C174BB01DAA1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DesafioAula11_01-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A884BB2A27E929B100B7D6D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -184,7 +234,7 @@
 				A884BB3227E929B100B7D6D2 /* AppDelegate.swift in Sources */,
 				A884BB4827E92B4500B7D6D2 /* CustomTableViewCell.swift in Sources */,
 				A884BB3427E929B100B7D6D2 /* SceneDelegate.swift in Sources */,
-				A884BB4E27E92EC000B7D6D2 /* UiImage+Extension.swift in Sources */,
+				A884BB4E27E92EC000B7D6D2 /* NaoUtilizado - UiImage+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +378,7 @@
 		};
 		A884BB4327E929B300B7D6D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 071C9CAA08204C75D05D25AF /* Pods-DesafioAula11_01.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -357,6 +408,7 @@
 		};
 		A884BB4427E929B300B7D6D2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95D1E492FB29E33599D054DB /* Pods-DesafioAula11_01.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
