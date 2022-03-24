@@ -67,9 +67,18 @@ class ViewController: UIViewController {
         loginButton.setTitle("Entrar", for: .normal)
         loginButton.backgroundColor = UIColor.deafultButtonBackgroundColor
         loginButton.setTitleColor(UIColor.deafultButtonTextColor, for: .normal)
+        loginButton.addTarget(self, action: #selector(autenticator), for: .touchUpInside)
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         return loginButton
     }()
+    
+    @objc func autenticator() {
+        let message = LoginAutenticator().autenticator(login: emailTextField.text!, pwd: pwdTextField.text!)
+        let alert = UIAlertController(title: message[0], message: message[1], preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Atenção", style: .default, handler: { msg in
+        }))
+        present(alert, animated: true, completion: nil)
+    }
 
      
     // MARK: - Life Cicles
@@ -87,8 +96,6 @@ class ViewController: UIViewController {
         configurePwdLabel()
         configurePwdTextField()
         configureLoginButton()
-        
-        
     }
     
     
@@ -157,5 +164,17 @@ class ViewController: UIViewController {
     }
 
 
+}
+
+extension String {
+    
+    // Create a function that validates the e-mail format
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        
+        return emailPred.evaluate(with: email)
+    }
 }
 

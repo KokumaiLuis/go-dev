@@ -13,6 +13,8 @@
 		A806D1B027EBF3F20056BE07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A806D1AF27EBF3F20056BE07 /* Assets.xcassets */; };
 		A806D1B327EBF3F20056BE07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A806D1B127EBF3F20056BE07 /* LaunchScreen.storyboard */; };
 		A806D1BC27EBF4870056BE07 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A806D1BB27EBF4870056BE07 /* Colors.swift */; };
+		A8167DCC27ED1283003D7A16 /* loginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8167DCB27ED1283003D7A16 /* loginData.swift */; };
+		A8167DCE27ED1462003D7A16 /* LoginAutenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8167DCD27ED1462003D7A16 /* LoginAutenticator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A806D1B227EBF3F20056BE07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A806D1B427EBF3F20056BE07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A806D1BB27EBF4870056BE07 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A8167DCB27ED1283003D7A16 /* loginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginData.swift; sourceTree = "<group>"; };
+		A8167DCD27ED1462003D7A16 /* LoginAutenticator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAutenticator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				A806D1AF27EBF3F20056BE07 /* Assets.xcassets */,
 				A806D1B127EBF3F20056BE07 /* LaunchScreen.storyboard */,
 				A806D1B427EBF3F20056BE07 /* Info.plist */,
+				A8167DCB27ED1283003D7A16 /* loginData.swift */,
+				A8167DCD27ED1462003D7A16 /* LoginAutenticator.swift */,
 			);
 			path = DesafioAula13_01;
 			sourceTree = "<group>";
@@ -147,8 +153,10 @@
 			files = (
 				A806D1AB27EBF3F00056BE07 /* ViewController.swift in Sources */,
 				A806D1BC27EBF4870056BE07 /* Colors.swift in Sources */,
+				A8167DCE27ED1462003D7A16 /* LoginAutenticator.swift in Sources */,
 				A806D1A727EBF3F00056BE07 /* AppDelegate.swift in Sources */,
 				A806D1A927EBF3F00056BE07 /* SceneDelegate.swift in Sources */,
+				A8167DCC27ED1283003D7A16 /* loginData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
