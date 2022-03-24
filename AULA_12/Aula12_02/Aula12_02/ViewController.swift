@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         
         static let textButton = "Call View"
         static let textLabel = "Label centralizada"
-    }
+    } 
     
     var safeArea: UILayoutGuide!
     
