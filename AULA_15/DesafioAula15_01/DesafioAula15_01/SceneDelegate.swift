@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Aula14_01
+//  DesafioAula15_01
 //
-//  Created by SP11793 on 24/03/22.
+//  Created by SP11793 on 25/03/22.
 //
 
 import UIKit
@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    let viewController = HomeViewController()
+    var viewController = ChatsViewController()
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -20,6 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = viewController
         window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

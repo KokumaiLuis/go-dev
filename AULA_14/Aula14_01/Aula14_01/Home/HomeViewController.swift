@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
     
     private var safeArea: UILayoutGuide!
     
@@ -30,6 +30,20 @@ class ViewController: UIViewController {
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        let addButton = UIBarButtonItem(image: UIImage.init(systemName: "play.circle"), style: .plain, target: self, action: #selector(callSecondView))
+        
+        navigationItem.rightBarButtonItems = [addButton]
+    }
+    
+    @objc func callSecondView() {
+        let secondViewController = SecondViewController()
+        
+        secondViewController.idProduct = "12345"
+        
+        navigationController?.present(secondViewController, animated: true)
     }
 
     override func viewDidLoad() {
@@ -37,7 +51,7 @@ class ViewController: UIViewController {
         
         safeArea = view.layoutMarginsGuide
         
-        title = "View Controller"
+        title = "Home"
         view.backgroundColor = UIColor.systemBackground
         
         view.addSubview(tableView)
@@ -58,11 +72,17 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let thirdViewController = ThirdViewController()
+        
+        navigationController?.pushViewController(thirdViewController, animated: true)
+    }
 }
 
-extension ViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }

@@ -24,7 +24,6 @@ class CustomTableViewCell: UITableViewCell {
         stack.axis = .vertical
         stack.spacing = 10
         stack.contentMode = .top
-        stack.backgroundColor = UIColor.systemBackground
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
