@@ -15,16 +15,17 @@ class CustomTableViewCell: UITableViewCell {
     
     lazy var contactImageView: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
     lazy var organizationalStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
+        let stack = UIStackView(frame: .zero)
+        stack.alignment = .fill
         stack.contentMode = .top
-        stack.spacing = 2
+        stack.spacing = 8
+        stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -39,19 +40,19 @@ class CustomTableViewCell: UITableViewCell {
     
     lazy var contactChatLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.font = UIFont.systemFont(ofSize: 15)
         label.textColor = UIColor.defaultTextColor
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    // MARK: - Private Variables
     
     //MARK: - Life Cycles
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        accessoryType = .disclosureIndicator
         
         addSubViews()
         componentsConfigure()
@@ -65,24 +66,25 @@ class CustomTableViewCell: UITableViewCell {
     // MARK: - Private Methods
 
     private func addSubViews(){
-        addSubViews(contactImageView, organizationalStack)
+        addSubview(contactImageView)
         organizationalStack.addArrangedSubview(contactNameLabel)
         organizationalStack.addArrangedSubview(contactChatLabel)
+        addSubview(organizationalStack)
     }
     
     private func componentsConfigure() {
         contactImageViewConfig()
         organizationalStackConfig()
-        contactNameLabelConfig()
-        contactChatLabelConfig()
     }
     
     private func contactImageViewConfig() {
+        contactImageView.layer.cornerRadius = contactImageView.layer.frame.width / 2
+        
         NSLayoutConstraint.activate([
             contactImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            contactImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            contactImageView.heightAnchor.constraint(equalToConstant: 40),
-            contactImageView.widthAnchor.constraint(equalToConstant: 40)
+            contactImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            contactImageView.heightAnchor.constraint(equalToConstant: 45),
+            contactImageView.widthAnchor.constraint(equalToConstant: 45)
         ])
     }
     
@@ -90,22 +92,11 @@ class CustomTableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             organizationalStack.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             organizationalStack.leadingAnchor.constraint(equalTo: contactImageView.trailingAnchor, constant: 10),
-            organizationalStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            organizationalStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             organizationalStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10)
         ])
     }
     
-    private func contactNameLabelConfig() {
-        NSLayoutConstraint.activate([
-            contactNameLabel.heightAnchor.constraint(equalToConstant: 18)
-        ])
-    }
-    
-    private func contactChatLabelConfig() {
-        NSLayoutConstraint.activate([
-            contactChatLabel.heightAnchor.constraint(equalToConstant: 40)
-        ])
-    }
     
     // MARK: - Private Methods
     

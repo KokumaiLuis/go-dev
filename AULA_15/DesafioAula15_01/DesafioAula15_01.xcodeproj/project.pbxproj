@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A810E09527F0FD5800840657 /* CustomTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A810E09427F0FD5800840657 /* CustomTableViewHeader.swift */; };
 		A8FAEA3427EE87BA003397F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA3327EE87BA003397F1 /* AppDelegate.swift */; };
 		A8FAEA3627EE87BA003397F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA3527EE87BA003397F1 /* SceneDelegate.swift */; };
 		A8FAEA3827EE87BA003397F1 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA3727EE87BA003397F1 /* ChatsViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A810E09427F0FD5800840657 /* CustomTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewHeader.swift; sourceTree = "<group>"; };
 		A8FAEA3027EE87BA003397F1 /* DesafioAula15_01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioAula15_01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FAEA3327EE87BA003397F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8FAEA3527EE87BA003397F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A810E09327F0FD4200840657 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				A810E09427F0FD5800840657 /* CustomTableViewHeader.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		A8FAEA2727EE87BA003397F1 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		A8FAEA3227EE87BA003397F1 /* DesafioAula15_01 */ = {
 			isa = PBXGroup;
 			children = (
+				A810E09327F0FD4200840657 /* Header */,
 				A8FAEA5727EED055003397F1 /* Model */,
 				A8FAEA5427EECFED003397F1 /* ApiService */,
 				A8FAEA5127EECD9B003397F1 /* SecondViewController */,
@@ -213,6 +224,7 @@
 				A8FAEA5B27EED40B003397F1 /* UIImage+Extension.swift in Sources */,
 				A8FAEA5627EED031003397F1 /* ApiService.swift in Sources */,
 				A8FAEA3627EE87BA003397F1 /* SceneDelegate.swift in Sources */,
+				A810E09527F0FD5800840657 /* CustomTableViewHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

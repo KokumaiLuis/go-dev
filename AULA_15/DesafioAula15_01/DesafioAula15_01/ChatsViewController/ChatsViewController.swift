@@ -21,42 +21,6 @@ class ChatsViewController: UIViewController {
     
     var safeArea: UILayoutGuide!
     
-    lazy var organizationalVerticalStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .vertical
-        stack.contentMode = .top
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
-    
-    lazy var organizationalHorizontalStack: UIStackView = {
-        let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        return stack
-    }()
-    
-    lazy var broadcastsListButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setTitle( "Broadcasts Lists", for: .normal)
-        button.backgroundColor = UIColor.defaultBackgroundColor
-        button.setTitleColor(UIColor.defatultSecondaryColor, for: .normal)
-        button.contentHorizontalAlignment = .left
-        //button.addTarget(self, action: #selector(goToBroadcasts), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    lazy var newGroupButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setTitle( "New Group", for: .normal)
-        button.backgroundColor = UIColor.defaultBackgroundColor
-        button.setTitleColor(UIColor.defatultSecondaryColor, for: .normal)
-        button.contentHorizontalAlignment = .right
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     lazy var chatsTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -82,6 +46,7 @@ class ChatsViewController: UIViewController {
         componentsConfigure()
         delegates()
         registerCell()
+        registerHeader()
         getContacts()
     }
     
@@ -98,15 +63,11 @@ class ChatsViewController: UIViewController {
     }
     
     private func addSubViews() {
-        view.addSubViews(organizationalVerticalStack)
-//        organizationalVerticalStack.addArrangedSubview(organizationalHorizontalStack)
-        organizationalVerticalStack.addArrangedSubview(chatsTableView)
-//        organizationalHorizontalStack.addArrangedSubview(broadcastsListButton)
-//        organizationalHorizontalStack.addArrangedSubview(newGroupButton)
+        view.addSubViews(chatsTableView)
     }
     
     private func componentsConfigure() {
-        organizationalVerticalStackConfig()
+        chatsTableViewConfig()
     }
     
     private func navigationControllerAppearance() {
@@ -134,16 +95,15 @@ class ChatsViewController: UIViewController {
     
     @objc func callSecondView() {
         let secondViewController = SecondViewController()
-        
         navigationController?.present(secondViewController, animated: true)
     }
     
-    private func organizationalVerticalStackConfig() {
+    private func chatsTableViewConfig() {
         NSLayoutConstraint.activate([
-            organizationalVerticalStack.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 10),
-            organizationalVerticalStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            organizationalVerticalStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            organizationalVerticalStack.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 10)
+            chatsTableView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 10),
+            chatsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            chatsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            chatsTableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 10)
         ])
     }
     
@@ -154,6 +114,10 @@ class ChatsViewController: UIViewController {
     
     private func registerCell() {
         chatsTableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.identifier)
+    }
+    
+    private func registerHeader() {
+        chatsTableView.register(CustomTableViewHeader.self, forHeaderFooterViewReuseIdentifier: CustomTableViewHeader.identifier)
     }
     
     private func getContacts() {
@@ -173,6 +137,16 @@ class ChatsViewController: UIViewController {
 }
 
 extension ChatsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: CustomTableViewHeader.identifier) as? CustomTableViewHeader else { return UIView()}
+        
+        return header
+    }
     
 }
 
