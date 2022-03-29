@@ -16,6 +16,8 @@ class CustomTableViewCell: UITableViewCell {
     lazy var contactImageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
+        image.backgroundColor = .blue
+        image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
@@ -53,6 +55,8 @@ class CustomTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         accessoryType = .disclosureIndicator
+        
+        contactImageView.layer.cornerRadius = 22.5
         
         addSubViews()
         componentsConfigure()
