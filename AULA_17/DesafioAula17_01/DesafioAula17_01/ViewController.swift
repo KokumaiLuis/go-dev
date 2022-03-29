@@ -10,6 +10,10 @@ import WebKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Public Variables
+    
+    let searchController = UISearchController(searchResultsController: nil)
+    
     lazy var webView: WKWebView = {
         let webConfiguration = WKWebViewConfiguration()
         let webview = WKWebView(frame: .zero, configuration: webConfiguration)
@@ -18,13 +22,17 @@ class ViewController: UIViewController {
         return webview
     }()
     
-    let searchController = UISearchController(searchResultsController: nil)
+    
+    // MARK: - Private Variables
     
     private var searchText: String = "https://www.apple.com" {
         didSet {
             setupWebView()
         }
     }
+    
+    
+    //MARK: - Life Cycles
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -40,14 +48,14 @@ class ViewController: UIViewController {
         configureUI()
         setupWebView()
         navigationControllerSetup()
-        title = "🍊BusCaqui🍊"
     }
+    
+    
+    // MARK: - Private Methods
     
     private func searchBarControllerSetup() {
         searchController.delegate = self
         searchController.searchResultsUpdater = self
-        definesPresentationContext = true
-        searchController.loadViewIfNeeded()
         searchController.searchBar.text = searchText
         searchController.searchBar.searchTextField.tintColor = .orange
         searchController.searchBar.autocapitalizationType = .none
@@ -62,7 +70,7 @@ class ViewController: UIViewController {
     private func navigationControllerSetup() {
         navigationItem.searchController = searchController
         self.definesPresentationContext = true
-        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.hidesSearchBarWhenScrolling = true
         self.searchBarControllerSetup()
     }
     
@@ -102,6 +110,7 @@ class ViewController: UIViewController {
     }
     
     private func configureUI() {
+        title = "🍊BusCaqui🍊"
         view.addSubview(webView)
         
         NSLayoutConstraint.activate([
@@ -114,6 +123,8 @@ class ViewController: UIViewController {
     
     
 }
+
+// MARK: - Extensions
 
 extension ViewController {
     @objc func forwardAction() {
