@@ -34,6 +34,9 @@ class CustomTableViewHeader: UITableViewHeaderFooterView {
         return button
     }()
     
+    
+    // MARK: - Life Cycles
+    
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
         contentViewConfig()

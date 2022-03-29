@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		A810E09527F0FD5800840657 /* CustomTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A810E09427F0FD5800840657 /* CustomTableViewHeader.swift */; };
+		A8E3720827F2A38700960739 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E3720727F2A38700960739 /* TabBarViewController.swift */; };
+		A8E3720A27F2A49700960739 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E3720927F2A49700960739 /* StatusViewController.swift */; };
+		A8E3720C27F2A4AD00960739 /* CallsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E3720B27F2A4AD00960739 /* CallsViewController.swift */; };
+		A8E3720E27F2A4CA00960739 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E3720D27F2A4CA00960739 /* CameraViewController.swift */; };
+		A8E3721027F2A4D600960739 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E3720F27F2A4D600960739 /* SettingsViewController.swift */; };
 		A8FAEA3427EE87BA003397F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA3327EE87BA003397F1 /* AppDelegate.swift */; };
 		A8FAEA3627EE87BA003397F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA3527EE87BA003397F1 /* SceneDelegate.swift */; };
 		A8FAEA3827EE87BA003397F1 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FAEA3727EE87BA003397F1 /* ChatsViewController.swift */; };
@@ -24,6 +29,11 @@
 
 /* Begin PBXFileReference section */
 		A810E09427F0FD5800840657 /* CustomTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewHeader.swift; sourceTree = "<group>"; };
+		A8E3720727F2A38700960739 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		A8E3720927F2A49700960739 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		A8E3720B27F2A4AD00960739 /* CallsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallsViewController.swift; sourceTree = "<group>"; };
+		A8E3720D27F2A4CA00960739 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		A8E3720F27F2A4D600960739 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A8FAEA3027EE87BA003397F1 /* DesafioAula15_01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioAula15_01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8FAEA3327EE87BA003397F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8FAEA3527EE87BA003397F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +94,7 @@
 				A8FAEA5127EECD9B003397F1 /* SecondViewController */,
 				A8FAEA4D27EEAA92003397F1 /* Cell */,
 				A8FAEA4827EE8B81003397F1 /* Colors */,
-				A8FAEA4727EE88E9003397F1 /* ChatsViewController */,
+				A8FAEA4727EE88E9003397F1 /* Controllers */,
 				A8FAEA3327EE87BA003397F1 /* AppDelegate.swift */,
 				A8FAEA3527EE87BA003397F1 /* SceneDelegate.swift */,
 				A8FAEA3C27EE87C0003397F1 /* Assets.xcassets */,
@@ -96,12 +106,17 @@
 			path = DesafioAula15_01;
 			sourceTree = "<group>";
 		};
-		A8FAEA4727EE88E9003397F1 /* ChatsViewController */ = {
+		A8FAEA4727EE88E9003397F1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				A8FAEA3727EE87BA003397F1 /* ChatsViewController.swift */,
+				A8E3720727F2A38700960739 /* TabBarViewController.swift */,
+				A8E3720927F2A49700960739 /* StatusViewController.swift */,
+				A8E3720B27F2A4AD00960739 /* CallsViewController.swift */,
+				A8E3720D27F2A4CA00960739 /* CameraViewController.swift */,
+				A8E3720F27F2A4D600960739 /* SettingsViewController.swift */,
 			);
-			path = ChatsViewController;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		A8FAEA4827EE8B81003397F1 /* Colors */ = {
@@ -216,12 +231,17 @@
 			files = (
 				A8FAEA4F27EEAAAF003397F1 /* CustomTableViewCell.swift in Sources */,
 				A8FAEA3827EE87BA003397F1 /* ChatsViewController.swift in Sources */,
+				A8E3720C27F2A4AD00960739 /* CallsViewController.swift in Sources */,
 				A8FAEA5927EED062003397F1 /* Contacts.swift in Sources */,
 				A8FAEA4A27EE8B92003397F1 /* DefaultColors.swift in Sources */,
+				A8E3720827F2A38700960739 /* TabBarViewController.swift in Sources */,
 				A8FAEA3427EE87BA003397F1 /* AppDelegate.swift in Sources */,
+				A8E3721027F2A4D600960739 /* SettingsViewController.swift in Sources */,
+				A8E3720A27F2A49700960739 /* StatusViewController.swift in Sources */,
 				A8FAEA5327EECDBB003397F1 /* SecondViewController.swift in Sources */,
 				A8FAEA4C27EE9061003397F1 /* UIView+Extension.swift in Sources */,
 				A8FAEA5B27EED40B003397F1 /* UIImage+Extension.swift in Sources */,
+				A8E3720E27F2A4CA00960739 /* CameraViewController.swift in Sources */,
 				A8FAEA5627EED031003397F1 /* ApiService.swift in Sources */,
 				A8FAEA3627EE87BA003397F1 /* SceneDelegate.swift in Sources */,
 				A810E09527F0FD5800840657 /* CustomTableViewHeader.swift in Sources */,

@@ -16,18 +16,21 @@ class CustomTableViewCell: UITableViewCell {
     lazy var contactImageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
-        image.backgroundColor = .blue
-        image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
-    lazy var organizationalStack: UIStackView = {
+    lazy var organizationalVerticalStack: UIStackView = {
         let stack = UIStackView(frame: .zero)
-        stack.alignment = .fill
-        stack.contentMode = .top
         stack.spacing = 8
         stack.axis = .vertical
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
+    lazy var organizationalHorizontalStack: UIStackView = {
+        let stack = UIStackView(frame: .zero)
+        stack.axis = .horizontal
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
     }()
@@ -49,14 +52,19 @@ class CustomTableViewCell: UITableViewCell {
         return label
     }()
     
+    lazy var lastMessageLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 15)
+        label.textColor = UIColor.defaultTextColor
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     
     //MARK: - Life Cycles
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        accessoryType = .disclosureIndicator
-        
-        contactImageView.layer.cornerRadius = 22.5
         
         addSubViews()
         componentsConfigure()
@@ -71,43 +79,60 @@ class CustomTableViewCell: UITableViewCell {
 
     private func addSubViews(){
         addSubview(contactImageView)
-        organizationalStack.addArrangedSubview(contactNameLabel)
-        organizationalStack.addArrangedSubview(contactChatLabel)
-        addSubview(organizationalStack)
+        addSubview(organizationalVerticalStack)
+        addSubview(organizationalHorizontalStack)
+        organizationalHorizontalStack.addArrangedSubview(contactNameLabel)
+        organizationalHorizontalStack.addArrangedSubview(lastMessageLabel)
+        organizationalVerticalStack.addArrangedSubview(organizationalHorizontalStack)
+        organizationalVerticalStack.addArrangedSubview(contactChatLabel)
     }
     
     private func componentsConfigure() {
         contactImageViewConfig()
-        organizationalStackConfig()
+        organizationalVerticalStackConfig()
+        organizationalHorizontalStackConfig()
     }
     
     private func contactImageViewConfig() {
         contactImageView.layer.cornerRadius = contactImageView.layer.frame.width / 2
         
         NSLayoutConstraint.activate([
-            contactImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            contactImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            contactImageView.heightAnchor.constraint(equalToConstant: 45),
-            contactImageView.widthAnchor.constraint(equalToConstant: 45)
+            
+            contactImageView.heightAnchor.constraint(equalToConstant: 60),
+            contactImageView.widthAnchor.constraint(equalToConstant: 60),
+            contactImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 16),
+            contactImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
     }
     
-    private func organizationalStackConfig() {
+    private func organizationalVerticalStackConfig() {
         NSLayoutConstraint.activate([
-            organizationalStack.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            organizationalStack.leadingAnchor.constraint(equalTo: contactImageView.trailingAnchor, constant: 10),
-            organizationalStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            organizationalStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10)
+            organizationalVerticalStack.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            organizationalVerticalStack.leadingAnchor.constraint(equalTo: contactImageView.trailingAnchor, constant: 10),
+            organizationalVerticalStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -35),
+            organizationalVerticalStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
+        ])
+    }
+    
+    private func organizationalHorizontalStackConfig() {
+        NSLayoutConstraint.activate([
+            organizationalHorizontalStack.leadingAnchor.constraint(equalTo: organizationalVerticalStack.leadingAnchor),
+            organizationalHorizontalStack.trailingAnchor.constraint(equalTo: organizationalVerticalStack.trailingAnchor)
         ])
     }
     
     
-    // MARK: - Private Methods
+    // MARK: - Public Methods
     
-    public func setup(name: String, picture: String, lastChat: String) {
+    public func setup(name: String, picture: String, lastChat: String, lastChatTimestamp: String) {
+        
         contactImageView.loadImage(from: picture)
         contactNameLabel.text = name
         contactChatLabel.text = lastChat
+        lastMessageLabel.text = lastChatTimestamp
+        
+        contactImageView.layer.cornerRadius = 30
+        contactImageView.layer.masksToBounds = true
     }
     
 }

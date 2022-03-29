@@ -13,7 +13,6 @@ class SecondViewController: UIViewController {
     
     lazy var closeButton: UIButton = {
         let button = UIButton(type: .close)
-        button.setImage(UIImage(systemName: "xmark.circle.fill"), for: .normal)
         button.tintColor = UIColor.defaultBackgroundColor
         button.addTarget(self, action: #selector(closeSecondViewController), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -25,6 +24,8 @@ class SecondViewController: UIViewController {
             print("Dismiss")
         }
     }
+    
+    // MARK: - Life Cycles
 
     override func viewDidLoad() {
         super.viewDidLoad()

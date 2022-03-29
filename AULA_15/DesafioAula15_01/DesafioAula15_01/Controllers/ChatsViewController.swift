@@ -9,6 +9,9 @@ import UIKit
 
 class ChatsViewController: UIViewController {
     
+    
+    // MARK: - Public Variables
+    
     lazy var contactList = [Contacts]() {
         didSet {
             DispatchQueue.main.async {
@@ -17,12 +20,14 @@ class ChatsViewController: UIViewController {
         }
     }
     
-    // MARK: - Public Variables
+    var contactSearch: [Contacts] = []
     
     var safeArea: UILayoutGuide!
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
     lazy var chatsTableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .plain)
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -31,13 +36,15 @@ class ChatsViewController: UIViewController {
     
     private let titleScreen = "Chats"
     
+    private var filterActive = false
+    
     
     //MARK: - Life Cycles
     
     override func viewWillAppear(_ animated: Bool) {
         navigationControllerConfig()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         safeArea = view.layoutMarginsGuide
@@ -48,6 +55,7 @@ class ChatsViewController: UIViewController {
         registerCell()
         registerHeader()
         getContacts()
+        navigationControllerSetup()
     }
     
     
@@ -85,25 +93,25 @@ class ChatsViewController: UIViewController {
         navigationController?.navigationBar.compactAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
         
-        let newChatButton = UIBarButtonItem(image: UIImage.init(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(callSecondView))
+        let newChatButton = UIBarButtonItem(image: UIImage.init(systemName: "square.and.pencil"), style: .plain, target: self, action: #selector(callSecondViewController))
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: nil)
         
         navigationItem.rightBarButtonItem = newChatButton
         navigationItem.leftBarButtonItem = editButton
-
+        
     }
     
-    @objc func callSecondView() {
+    @objc func callSecondViewController() {
         let secondViewController = SecondViewController()
         navigationController?.present(secondViewController, animated: true)
     }
     
     private func chatsTableViewConfig() {
         NSLayoutConstraint.activate([
-            chatsTableView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 10),
-            chatsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            chatsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            chatsTableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 10)
+            chatsTableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            chatsTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            chatsTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            chatsTableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
         ])
     }
     
@@ -128,12 +136,34 @@ class ChatsViewController: UIViewController {
                 self.contactList = res
             case .failure(let error):
                 print(error)
-
+                
             }
         }
     }
-
-
+    
+    private func searchBarControllerSetup() {
+        searchController.delegate = self
+        searchController.searchResultsUpdater = self
+        definesPresentationContext = true
+        searchController.searchBar.searchTextField.tintColor = UIColor.defatultSecondaryColor
+        searchController.searchBar.autocapitalizationType = .none
+        searchController.searchBar.searchTextField.clearButtonMode = .never
+        
+        searchController.searchBar.delegate = self
+        
+        searchController.searchBar.sizeToFit()
+        searchController.hidesNavigationBarDuringPresentation = false
+        
+    }
+    
+    private func navigationControllerSetup() {
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = true
+        self.searchBarControllerSetup()
+    }
+    
+    
 }
 
 extension ChatsViewController: UITableViewDelegate {
@@ -152,19 +182,52 @@ extension ChatsViewController: UITableViewDelegate {
 
 extension ChatsViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactList.count
+        return filterActive ? contactSearch.count : contactList.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.identifier, for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
         
-        let contact = contactList[indexPath.row]
+        let contact = filterActive ?  contactSearch[indexPath.row] : contactList[indexPath.row]
         
-        cell.setup(name: contact.name, picture: contact.picture, lastChat: contact.lastChat)
+        cell.setup(name: contact.name, picture: contact.picture, lastChat: contact.lastChat, lastChatTimestamp: contact.latestTimestamp)
+        cell.backgroundColor = UIColor.systemBackground
         
         return cell
     }
     
+    
+}
+
+extension ChatsViewController: UISearchControllerDelegate, UISearchResultsUpdating, UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)  {
+        filterItems(text: searchController.searchBar.text)
+    }
+    
+    func filterItems(text: String?) {
+        guard let text = text else {
+            filterActive = false
+            self.chatsTableView.reloadData()
+            return
+        }
+        
+        self.contactSearch = self.contactList.filter({ (contact) -> Bool in
+            return contact.name.lowercased().contains(text.lowercased())
+        })
+        filterActive = true
+        self.chatsTableView.reloadData()
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        filterActive = false
+        self.chatsTableView.reloadData()
+        return
+    }
     
 }
 
